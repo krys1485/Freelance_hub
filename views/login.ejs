@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <title>Login - Freelance Hub</title>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Freelance Hub</div>
+  </header>
+
+  <main class="auth-container">
+    <div class="auth-box">
+      <h2>Login</h2>
+
+      <% if (flash && flash.error && flash.error.length) { %>
+        <div class="error-message"><%= flash.error[0] %></div>
+      <% } %>
+
+      <% if (flash && flash.success && flash.success.length) { %>
+        <div class="success-message"><%= flash.success[0] %></div>
+      <% } %>
+
+      <form method="POST">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="Enter your email" required />
+
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter your password" required />
+
+        <input type="submit" value="Login" class="btn-primary" />
+      </form>
+
+      <p class="auth-link">
+        Don’t have an account? <a href="/signup">Sign Up</a>
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Freelance Hub. All rights reserved.</p>
+  </footer>
+</body>
+</html>
